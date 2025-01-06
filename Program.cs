@@ -43,9 +43,3 @@ public class Program
         } while (true);
     }
 }
-
-public class CommandResult
-{
-    public bool RequestExit { get; set; }
-    public bool IsHandled { get; set; }
-}
