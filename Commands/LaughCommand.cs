@@ -1,7 +1,12 @@
-namespace Sork;
+namespace Sork.Commands;
 
 public class LaughCommand : ICommand
 {
+    private readonly UserInputOutput io;
+    public LaughCommand(UserInputOutput io)
+    {
+        this.io = io;
+    }
     public bool Handles(string userInput)
     {
         return userInput == "lol";
@@ -9,7 +14,7 @@ public class LaughCommand : ICommand
 
     public CommandResult Execute()
     {
-        Console.WriteLine("You laugh out loud, hysterically!");
+        io.WriteMessageLine("You laugh out loud, hysterically!");
         return new CommandResult { RequestExit = false, IsHandled = true };
     }
 }
