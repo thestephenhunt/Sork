@@ -1,7 +1,7 @@
 namespace Sork.Commands;
-
-public class ExitCommand : ICommand
+using Sork.World;
+public class ExitCommand : BaseCommand
 {  
-    public bool Handles(string userInput) => userInput == "exit";
-    public CommandResult Execute() => new CommandResult { RequestExit = true, IsHandled = true };
+    public override bool Handles(string userInput) => GetCommandFromInput(userInput) == "exit";
+    public override CommandResult Execute(string userInput, GameState gameState) => new CommandResult { RequestExit = true, IsHandled = true };
 }

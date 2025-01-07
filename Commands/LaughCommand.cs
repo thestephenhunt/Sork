@@ -1,20 +1,21 @@
 namespace Sork.Commands;
-
-public class LaughCommand : ICommand
+using Sork.World;
+public class LaughCommand : BaseCommand
 {
     private readonly UserInputOutput io;
     public LaughCommand(UserInputOutput io)
     {
         this.io = io;
     }
-    public bool Handles(string userInput)
+    public override bool Handles(string userInput)
     {
-        return userInput == "lol";
+        return GetCommandFromInput(userInput) == "lol";
     }
 
-    public CommandResult Execute()
+    public override CommandResult Execute(string userInput, GameState gameState)
     {
-        io.WriteMessageLine("You laugh out loud, hysterically!");
+        io.WriteNoun("You");
+        io.WriteMessageLine(" laugh out loud, hysterically!");
         return new CommandResult { RequestExit = false, IsHandled = true };
     }
 }
