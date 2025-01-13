@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "THLm59Pgty8=",
+  "dgSpecHash": "Mc8iCC11obg=",
   "success": true,
   "projectFilePath": "/home/stephen/Work/dotnet/Sork/Sork.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/stephen/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "/home/stephen/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
