@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sork", "Sork.csproj", "{191D2545-F05A-4AAA-8307-E600463622B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sork.Tests", "test\Sork.Tests.csproj", "{3580E201-ACC6-4392-908A-DD5B40A2883A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sork", "game\Sork.csproj", "{32050CB9-5330-427F-AE4A-70306FFC556D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,14 @@ Global
 		{191D2545-F05A-4AAA-8307-E600463622B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{191D2545-F05A-4AAA-8307-E600463622B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{191D2545-F05A-4AAA-8307-E600463622B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3580E201-ACC6-4392-908A-DD5B40A2883A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3580E201-ACC6-4392-908A-DD5B40A2883A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3580E201-ACC6-4392-908A-DD5B40A2883A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3580E201-ACC6-4392-908A-DD5B40A2883A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32050CB9-5330-427F-AE4A-70306FFC556D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32050CB9-5330-427F-AE4A-70306FFC556D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32050CB9-5330-427F-AE4A-70306FFC556D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32050CB9-5330-427F-AE4A-70306FFC556D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
