@@ -2,8 +2,8 @@ namespace Sork.Commands;
 using Sork.World;
 public class DanceCommand : BaseCommand
 {
-    private readonly UserInputOutput io;
-    public DanceCommand(UserInputOutput io)
+    private readonly IUserInputOutput io;
+    public DanceCommand(IUserInputOutput io)
     {
         this.io = io;
     }
@@ -15,11 +15,13 @@ public class DanceCommand : BaseCommand
     public override CommandResult Execute(string userInput, GameState gameState)
     {
         var parameters = GetParametersFromInput(userInput);
-        if (parameters.Length == 0) 
+        if (parameters.Length == 0)
         {
             io.WriteNoun("You");
             io.WriteMessageLine(" dance awkwardly.");
-        } else {
+        }
+        else
+        {
             io.WriteNoun("You");
             io.WriteMessage(" dance awkwardly with ");
             io.WriteNoun(parameters[0]);
@@ -27,4 +29,4 @@ public class DanceCommand : BaseCommand
         }
         return new CommandResult { RequestExit = false, IsHandled = true };
     }
-}   
+}

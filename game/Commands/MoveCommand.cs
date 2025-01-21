@@ -3,11 +3,11 @@ using Sork.World;
 
 public class MoveCommand : BaseCommand
 {
-    private readonly UserInputOutput _io;
+    private readonly IUserInputOutput io;
 
-    public MoveCommand(UserInputOutput io)
+    public MoveCommand(IUserInputOutput io)
     {
-        _io = io;
+        this.io = io;
     }
 
     public override bool Handles(string userInput)
@@ -19,7 +19,7 @@ public class MoveCommand : BaseCommand
     {
         var direction = GetParametersFromInput(userInput)[0].ToLower();
         gameState.Player.Location = gameState.Player.Location.Exits[direction];
-        _io.WriteMessageLine($"You move to {gameState.Player.Location.Name}.");
+        io.WriteMessageLine($"You move to {gameState.Player.Location.Name}.");
         return new CommandResult { RequestExit = false, IsHandled = true };
     }
 }

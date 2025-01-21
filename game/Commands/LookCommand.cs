@@ -3,9 +3,9 @@ using Sork.World;
 
 public class LookCommand : BaseCommand
 {
-    private readonly UserInputOutput io;
+    private readonly IUserInputOutput io;
 
-    public LookCommand(UserInputOutput io)
+    public LookCommand(IUserInputOutput io)
     {
         this.io = io;
     }

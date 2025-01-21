@@ -9,8 +9,8 @@ public class Program
     public static void Main(string[] args)
     {
         var services = new ServiceCollection();
-        services.AddSingleton<UserInputOutput>();
-        services.AddSingleton<GameState>(sp => GameState.Create(sp.GetRequiredService<UserInputOutput>()));
+        services.AddSingleton<IUserInputOutput, UserInputOutput>();
+        services.AddSingleton<GameState>(sp => GameState.Create(sp.GetRequiredService<IUserInputOutput>()));
 
         var commandTypes = typeof(ICommand).Assembly.GetTypes().Where(t => typeof(ICommand).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract);
 
@@ -23,7 +23,7 @@ public class Program
 
         var gameState = provider.GetRequiredService<GameState>();
         var commands = provider.GetServices<ICommand>().ToList();
-        var io = provider.GetRequiredService<UserInputOutput>();
+        var io = provider.GetRequiredService<IUserInputOutput>();
 
         do
         {
@@ -44,13 +44,13 @@ public class Program
                     }
                 }
             }
-            if (result.RequestExit)
-            {
-                break;
-            }
             if (!handled)
             {
                 io.WriteMessageLine("Huh?");
+            }
+            if (result.RequestExit)
+            {
+                break;
             }
         } while (true);
     }
